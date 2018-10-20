@@ -1,16 +1,30 @@
-# Android fstab file for TWRP.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# <mnt_point> <type>  <src>                                             <mnt_flags and options>   <fs_mgr_flags>
-/aboot        emmc    /dev/block/platform/msm_sdcc.1/by-name/aboot
-/boot         emmc    /dev/block/platform/msm_sdcc.1/by-name/boot
-/cache        ext4    /dev/block/platform/msm_sdcc.1/by-name/cache
-/data         ext4    /dev/block/platform/msm_sdcc.1/by-name/userdata   length=-16384
-/dbi          emmc    /dev/block/platform/msm_sdcc.1/by-name/dbi
-/misc         emmc    /dev/block/platform/msm_sdcc.1/by-name/misc
-/modem        emmc    /dev/block/platform/msm_sdcc.1/by-name/modem
-/recovery     emmc    /dev/block/platform/msm_sdcc.1/by-name/recovery
-/rpm          emmc    /dev/block/platform/msm_sdcc.1/by-name/rpm
-/sbl1         emmc    /dev/block/platform/msm_sdcc.1/by-name/sbl1
-/system       ext4    /dev/block/platform/msm_sdcc.1/by-name/system
-/tz           emmc    /dev/block/platform/msm_sdcc.1/by-name/tz
-/usbotg       vfat    /dev/block/platform/xhci-hcd/by-num/p1            flags=display="USB-OTG";storage;wipeingui;removable
+#
+# Copyright (C) 2018 The TwrpBuilder Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+#These are important partitions for sure
+/boot 		emmc 	/dev/block/platform/msm_sdcc.1/by-name/boot
+/data 		ext4 	/dev/block/platform/msm_sdcc.1/by-name/userdata length=-16384
+/system 	ext4 	/dev/block/platform/msm_sdcc.1/by-name/system
+/cache 		ext4 	/dev/block/platform/msm_sdcc.1/by-name/cache
+/misc 		emmc 	/dev/block/platform/msm_sdcc.1/by-name/misc
+/recovery 	emmc 	/dev/block/platform/msm_sdcc.1/by-name/recovery flags=display="Recovery";backup=1
+
+#Both should be emmc (vfat and ext4 in ROM) but for now comment it out (not sure if these are needed)
+#/modem 	vfat 	/dev/block/platform/msm_sdcc.1/by-name/modem
+#/persist 	ext4 	/dev/block/platform/msm_sdcc.1/by-name/persist
+
+#I am not sure about otg partition but i tried this partition (pls correct if wrong)
+/usb-otg	vfat 	/dev/block/platform/msm_sdcc.1/by-name/sbl1 flags=display="USB-OTG";removable;storage
