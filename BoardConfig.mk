@@ -36,10 +36,10 @@ TARGET_CPU_SMP      := true
 TARGET_CPU_VARIANT  := krait
 
 # Kernel
-BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-BOARD_KERNEL_BASE                  := 0x00000000
-BOARD_KERNEL_PAGESIZE              := 2048
-BOARD_MKBOOTIMG_ARGS               := --dt device/xiaomi/cancro/dt.img --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+#BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+#BOARD_KERNEL_BASE                  := 0x00000000
+#BOARD_KERNEL_PAGESIZE              := 2048
+#BOARD_MKBOOTIMG_ARGS               := --dt device/xiaomi/cancro/dt.img --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 TARGET_PREBUILT_KERNEL := device/xiaomi/cancro/kernel
 
 # Filesystem
@@ -58,6 +58,8 @@ BOARD_FLASH_BLOCK_SIZE              := 131072
 # TWRP configuration
 TARGET_RECOVERY_FSTAB := $(CANCRO_PATH)/recovery/twrp.fstab
 TW_THEME := portrait_hdpi
+TW_CUSTOM_THEME := $(CANCRO_PATH)/theme
+#TW_DEVICE_VERSION := test
 WITH_TWRP := true
 BOARD_HAS_NO_REAL_SDCARD                := true
 BOARD_RECOVERY_SWIPE                    := true

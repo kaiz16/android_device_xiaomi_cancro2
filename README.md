@@ -1,2 +1,2 @@
-# android_device_xiaomi_cancro2
-Minimal device tree for building only twrp with prebuilt lineage kernel.
+# twrp_device_xiaomi_cancro
+device tree for building twrp only for cancro with caf prebuilt kernel
