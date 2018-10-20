@@ -52,7 +52,7 @@ BOARD_RECOVERY_SWIPE := true
 # Recovery
 TARGET_RECOVERY_FSTAB:= $(LOCAL_PATH)/recovery/twrp.fstab
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := by Kaiz
+#TW_DEVICE_VERSION := test
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_CRYPTO := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
