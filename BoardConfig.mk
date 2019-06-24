@@ -59,7 +59,6 @@ WITH_TWRP := true
 BOARD_HAS_NO_REAL_SDCARD                := true
 BOARD_RECOVERY_SWIPE                    := true
 RECOVERY_GRAPHICS_USE_LINELENGTH        := true
-RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID  := true
 TW_INCLUDE_CRYPTO                       := true
 TARGET_RECOVERY_QCOM_RTC_FIX            := true
