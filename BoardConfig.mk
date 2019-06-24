@@ -16,7 +16,7 @@
 #
 BOARD_VENDOR := xiaomi
 
-CANCRO_PATH := device/xiaomi/cancro
+DEVICE_PATH := device/xiaomi/cancro
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -36,11 +36,8 @@ TARGET_CPU_SMP      := true
 TARGET_CPU_VARIANT  := krait
 
 # Kernel
-#BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-#BOARD_KERNEL_BASE                  := 0x00000000
-#BOARD_KERNEL_PAGESIZE              := 2048
-#BOARD_MKBOOTIMG_ARGS               := --dt device/xiaomi/cancro/dt.img --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
-TARGET_PREBUILT_KERNEL := device/xiaomi/cancro/kernel
+BOARD_KERNEL_CMDLINE               := console=none vmalloc=340M androidboot.hardware=qcom msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4          := true
@@ -56,9 +53,8 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE   := 16384000
 BOARD_FLASH_BLOCK_SIZE              := 131072
 
 # TWRP configuration
-TARGET_RECOVERY_FSTAB := $(CANCRO_PATH)/recovery/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/twrp.fstab
 TW_THEME := portrait_hdpi
-#TW_DEVICE_VERSION := test
 WITH_TWRP := true
 BOARD_HAS_NO_REAL_SDCARD                := true
 BOARD_RECOVERY_SWIPE                    := true
@@ -75,6 +71,4 @@ TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 160
 TW_INCLUDE_NTFS_3G := true
-#TW_TARGET_USES_QCOM_BSP := true (this fix the heap_id_mask error when compiling with prebuilt kernel)
-
 
