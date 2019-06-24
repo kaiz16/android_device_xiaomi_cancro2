@@ -58,7 +58,6 @@ BOARD_FLASH_BLOCK_SIZE              := 131072
 # TWRP configuration
 TARGET_RECOVERY_FSTAB := $(CANCRO_PATH)/recovery/twrp.fstab
 TW_THEME := portrait_hdpi
-TW_CUSTOM_THEME := $(CANCRO_PATH)/theme
 #TW_DEVICE_VERSION := test
 WITH_TWRP := true
 BOARD_HAS_NO_REAL_SDCARD                := true
